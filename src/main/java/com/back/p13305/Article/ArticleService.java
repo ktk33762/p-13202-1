@@ -27,4 +27,14 @@ public class ArticleService {
         Article article = new Article(title, content);
         return articleRepository.save(article);
     }
+
+    public Article update(Long id, String title, String content) {
+        Article article = findById(id);
+        article.update(title, content);
+        return articleRepository.save(article);
+    }
+
+    public void delete(Long id) {
+        articleRepository.deleteById(id);
+    }
 }

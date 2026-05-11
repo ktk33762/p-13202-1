@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<header th:fragment="header">
+    <a href="/article/list" class="logo">메인</a>
+    <a href="/member/register" class="nav-link">회원가입</a>
+</header>
+
+<style>
+    .logo {
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+    }
+    .logo:hover {
+        color: #4a90e2;
+    }
+    .nav-link {
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+        margin-left: 16px;
+    }
+    .nav-link:hover {
+        color: #4a90e2;
+    }
+</style>
+</body>
+</html>

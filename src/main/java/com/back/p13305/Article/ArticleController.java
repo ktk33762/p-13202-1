@@ -43,4 +43,24 @@ public class ArticleController {
         model.addAttribute("article", articleService.findById(id));
         return "article/detail";
     }
+
+    @GetMapping("/article/edit/{id}")
+    public String editForm(@PathVariable Long id, Model model) {
+        model.addAttribute("article", articleService.findById(id));
+        return "article/edit";
+    }
+
+    @PostMapping("/article/edit/{id}")
+    public String edit(@PathVariable Long id,
+                       @RequestParam String title,
+                       @RequestParam String content) {
+        articleService.update(id, title, content);
+        return "redirect:/article/detail/" + id;
+    }
+
+    @PostMapping("/article/delete/{id}")
+    public String delete(@PathVariable Long id) {
+        articleService.delete(id);
+        return "redirect:/article/list";
+    }
 }
